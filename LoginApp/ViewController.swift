@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  LoginApp
 //
-//  Created by user219864 on 11/5/22.
+//  Created by Zahar Knyazev on 11/5/22.
 //
 
 import UIKit
