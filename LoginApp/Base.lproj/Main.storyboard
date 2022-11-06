@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DF8-82-LPJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,31 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-He-gfp">
-                                <rect key="frame" x="154" y="367" width="107" height="163"/>
+                                <rect key="frame" x="154" y="367" width="98" height="163"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="LoginTF" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnD-ec-q3h">
-                                        <rect key="frame" x="14" y="0.0" width="79" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnD-ec-q3h">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PasswordTF" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMD-iq-Jol">
-                                        <rect key="frame" x="0.0" y="66" width="107" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kMD-iq-Jol">
+                                        <rect key="frame" x="4" y="66" width="90.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPK-91-gOr">
-                                        <rect key="frame" x="24" y="132" width="59.5" height="31"/>
+                                        <rect key="frame" x="19.5" y="132" width="59.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                        <connections>
+                                            <segue destination="M6Z-9H-UmS" kind="show" id="oAd-4F-EIS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -44,10 +47,15 @@
                             <constraint firstItem="gDt-He-gfp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xRK-83-6FE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Authorization" id="pBM-K1-oTD"/>
+                    <connections>
+                        <outlet property="loginTF" destination="hnD-ec-q3h" id="mDq-rv-lia"/>
+                        <outlet property="passwordTF" destination="kMD-iq-Jol" id="6JM-6K-UM5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="Lln-H1-VlA">
@@ -58,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="S32-Bn-RKL">
-                                <rect key="frame" x="16" y="64" width="382" height="104"/>
+                                <rect key="frame" x="16" y="160" width="382" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGR-Pd-Tjx">
                                         <rect key="frame" x="104" y="0.0" width="174" height="30"/>
@@ -70,6 +78,9 @@
                                         <rect key="frame" x="156.5" y="73" width="69.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Logout"/>
+                                        <connections>
+                                            <segue destination="VZo-Wq-Mc6" kind="unwind" unwindAction="unwindFor:" id="DKN-GM-aHJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -82,10 +93,33 @@
                             <constraint firstItem="S32-Bn-RKL" firstAttribute="top" secondItem="TsW-an-6Jb" secondAttribute="top" constant="20" id="fUz-SU-t2A"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="far-J2-3hH"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="vGR-Pd-Tjx" id="jqM-9b-1wR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSH-rP-YMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VZo-Wq-Mc6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="129"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="128.57142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cM2-EI-niC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DF8-82-LPJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ekl-M3-VYS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t8e-nz-xS3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKB-QW-xGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
     </scenes>
     <resources>
